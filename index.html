@@ -61,6 +61,14 @@
   200% 100%; animation: shimmer 3s infinite; }
       .cta-pulse { animation: ctaPulse 3s ease-in-out infinite; }
     </style>
+    <script>
+      function subscribeWithEmail(form) {
+        var email = form.querySelector('input[name="email"]').value;
+        var url = 'https://thefullpicturenewsletter.substack.com/subscribe?email=' + encodeURIComponent(email);
+        window.open(url, '_blank', 'noopener');
+        return false;
+      }
+    </script>
   </head>
   <body class="bg-[#fafafa] text-zinc-900 overflow-x-hidden">
 
@@ -82,7 +90,7 @@
           <a href="https://thefullpicturenewsletter.substack.com/subscribe" target="_blank" rel="noopener"
   class="bg-gradient-to-r from-orange-600 to-rose-600 text-white px-4 sm:px-5 py-2.5 rounded-full text-sm font-bold
   hover:from-orange-500 hover:to-rose-500 transition shadow-lg shadow-orange-600/40 whitespace-nowrap">
-            Get the Free Playbook →
+            Subscribe Free →
           </a>
           <button onclick="document.getElementById('mobileMenu').classList.remove('hidden')" class="md:hidden w-10 h-10
   flex items-center justify-center rounded-lg hover:bg-zinc-100 transition" aria-label="Open menu">
@@ -123,7 +131,7 @@
   onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="mt-12 block text-center
   bg-gradient-to-r from-orange-600 to-rose-600 text-white px-6 py-5 rounded-xl text-lg font-bold shadow-2xl
   shadow-orange-600/40">
-        Get the Free Playbook →
+        Subscribe Free →
       </a>
       <div class="mt-12 flex items-center justify-center gap-4 text-zinc-400">
         <a href="https://www.linkedin.com/in/kgrunewald" target="_blank" rel="noopener" aria-label="LinkedIn"
@@ -162,7 +170,7 @@
     </div>
 
     <main>
-      <!-- SECTION 1: HERO -->
+      <!-- SECTION 1: HERO (Playbook CTA — email form) -->
       <section class="relative pt-16 pb-16 sm:pt-24 sm:pb-20 px-6 text-center grain overflow-hidden">
         <div class="absolute top-10 -left-20 w-72 h-72 bg-orange-400 rounded-full blur-3xl opacity-30
   pointer-events-none float-slow"></div>
@@ -198,23 +206,24 @@
           <p class="text-base sm:text-lg text-zinc-600 max-w-2xl mx-auto mb-10 leading-relaxed">
             Career strategy, AI workflows, and personal branding systems used by 150,000+ professionals.
           </p>
-          <div class="flex flex-col items-center gap-4">
-            <a href="https://thefullpicturenewsletter.substack.com/subscribe" target="_blank" rel="noopener"
-  class="relative inline-flex items-center gap-3 bg-gradient-to-r from-orange-600 to-rose-600 text-white px-10 sm:px-12
-  py-5 sm:py-6 rounded-2xl text-lg sm:text-xl font-bold hover:from-orange-500 hover:to-rose-500 transition-all
-  hover:scale-105 shadow-2xl shadow-orange-600/50 overflow-hidden group cta-pulse">
-              <span class="absolute inset-0 shimmer opacity-60"></span>
-              <span class="relative">Get the Free AI Playbook</span>
-              <svg class="relative w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
-  stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13
-   7l5 5m0 0l-5 5m5-5H6"/></svg>
-            </a>
-            <p class="text-sm text-zinc-500 font-medium">Join 150,000+ professionals · Instant access</p>
-          </div>
+          <form onsubmit="return subscribeWithEmail(this)" class="max-w-lg mx-auto">
+            <div class="flex flex-col sm:flex-row gap-3 bg-white p-2 rounded-2xl shadow-2xl shadow-orange-600/30 border
+  border-orange-100">
+              <input type="email" name="email" required placeholder="you@yourcompany.com" class="flex-1 min-w-0 px-5
+  py-4 rounded-xl text-base bg-transparent focus:outline-none">
+              <button type="submit" class="relative bg-gradient-to-r from-orange-600 to-rose-600 text-white px-6 sm:px-8
+   py-4 rounded-xl text-base font-bold hover:from-orange-500 hover:to-rose-500 transition-all shadow-lg
+  shadow-orange-600/40 overflow-hidden group whitespace-nowrap">
+                <span class="absolute inset-0 shimmer opacity-60"></span>
+                <span class="relative">Get the Free Playbook →</span>
+              </button>
+            </div>
+            <p class="text-sm text-zinc-500 font-medium mt-4">Join 150,000+ professionals · Instant access</p>
+          </form>
         </div>
       </section>
 
-      <!-- SECTION 2: LEAD MAGNET (centerpiece, immediately after hero) -->
+      <!-- SECTION 2: LEAD MAGNET (Playbook CTA — email form) -->
       <section id="playbook" class="relative py-20 sm:py-28 px-6 bg-gradient-to-br from-orange-50 via-white to-rose-50
   overflow-hidden border-y border-orange-100">
         <div class="absolute top-20 left-1/4 w-96 h-96 bg-orange-300 rounded-full blur-3xl opacity-30
@@ -303,17 +312,20 @@
                   <span class="text-lg text-zinc-800 font-semibold">Plus weekly newsletter access</span>
                 </li>
               </ul>
-              <a href="https://thefullpicturenewsletter.substack.com/subscribe" target="_blank" rel="noopener"
-  class="relative inline-flex items-center gap-3 bg-gradient-to-r from-orange-600 to-rose-600 text-white px-10 py-5
-  rounded-2xl text-lg font-bold hover:from-orange-500 hover:to-rose-500 transition-all hover:scale-105 shadow-2xl
-  shadow-orange-600/50 overflow-hidden group w-full sm:w-auto justify-center sm:justify-start">
-                <span class="absolute inset-0 shimmer opacity-60"></span>
-                <span class="relative">Get the Free AI Playbook</span>
-                <svg class="relative w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
-  stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13
-   7l5 5m0 0l-5 5m5-5H6"/></svg>
-              </a>
-              <p class="text-sm text-zinc-500 font-medium mt-4">Join 150,000+ professionals · Instant access</p>
+              <form onsubmit="return subscribeWithEmail(this)" class="max-w-lg">
+                <div class="flex flex-col sm:flex-row gap-3 bg-white p-2 rounded-2xl shadow-2xl shadow-orange-600/30
+  border border-orange-100">
+                  <input type="email" name="email" required placeholder="you@yourcompany.com" class="flex-1 min-w-0 px-5
+   py-4 rounded-xl text-base bg-transparent focus:outline-none">
+                  <button type="submit" class="relative bg-gradient-to-r from-orange-600 to-rose-600 text-white px-6
+  py-4 rounded-xl text-base font-bold hover:from-orange-500 hover:to-rose-500 transition-all shadow-lg
+  shadow-orange-600/40 overflow-hidden group whitespace-nowrap">
+                    <span class="absolute inset-0 shimmer opacity-60"></span>
+                    <span class="relative">Get the Free Playbook →</span>
+                  </button>
+                </div>
+                <p class="text-sm text-zinc-500 font-medium mt-4">Join 150,000+ professionals · Instant access</p>
+              </form>
             </div>
           </div>
         </div>
@@ -590,9 +602,8 @@
   gap-2">Subscribe <span class="group-hover:translate-x-1 transition-transform">→</span></p>
               </div>
             </a>
-            <a href="https://thefullpicturenewsletter.substack.com/subscribe" target="_blank" rel="noopener"
-  class="group relative bg-gradient-to-br from-orange-50 to-rose-50 p-8 rounded-3xl border border-orange-200/60
-  hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden">
+            <a href="#playbook" class="group relative bg-gradient-to-br from-orange-50 to-rose-50 p-8 rounded-3xl border
+   border-orange-200/60 hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden">
               <div class="absolute -top-12 -right-12 w-40 h-40 bg-white/40 rounded-full blur-2xl"></div>
               <div class="relative">
                 <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-600 to-rose-600 flex items-center
@@ -631,7 +642,7 @@
         </div>
       </section>
 
-      <!-- SECTION 7: ABOUT -->
+      <!-- SECTION 7: ABOUT (Newsletter CTA — link) -->
       <section id="about" class="relative py-20 sm:py-28 px-6 bg-white overflow-hidden">
         <div class="absolute top-20 left-10 w-72 h-72 bg-orange-200 rounded-full blur-3xl opacity-30
   pointer-events-none"></div>
@@ -687,7 +698,7 @@
   rounded-2xl text-lg font-bold hover:from-orange-500 hover:to-rose-500 transition-all hover:scale-105 shadow-2xl
   shadow-orange-600/50 overflow-hidden group">
             <span class="absolute inset-0 shimmer opacity-60"></span>
-            <span class="relative">Get the Free AI Playbook</span>
+            <span class="relative">Subscribe Free</span>
             <svg class="relative w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
   stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13
    7l5 5m0 0l-5 5m5-5H6"/></svg>
@@ -695,7 +706,7 @@
         </div>
       </section>
 
-      <!-- SECTION 8: FINAL CTA -->
+      <!-- SECTION 8: FINAL CTA (Newsletter CTA — link) -->
       <section class="relative py-20 sm:py-28 px-6 bg-gradient-to-br from-zinc-950 via-zinc-900 to-orange-950 text-white
    text-center overflow-hidden">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-orange-600 rounded-full blur-3xl opacity-30 pointer-events-none
@@ -727,7 +738,7 @@
   rounded-2xl text-xl font-bold hover:from-orange-500 hover:to-rose-500 transition-all hover:scale-105 shadow-2xl
   shadow-orange-600/60 overflow-hidden group cta-pulse">
             <span class="absolute inset-0 shimmer opacity-60"></span>
-            <span class="relative">Get the Free AI Playbook</span>
+            <span class="relative">Subscribe Free</span>
             <svg class="relative w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none"
   stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13
    7l5 5m0 0l-5 5m5-5H6"/></svg>
@@ -846,7 +857,7 @@
   block text-center bg-gradient-to-r from-orange-600 to-rose-600 text-white px-6 py-4 rounded-xl text-base font-bold
   hover:from-orange-500 hover:to-rose-500 transition shadow-lg shadow-orange-600/50 overflow-hidden">
         <span class="absolute inset-0 shimmer opacity-50"></span>
-        <span class="relative">Get the Free AI Playbook →</span>
+        <span class="relative">Subscribe Free →</span>
       </a>
     </div>
 
